@@ -32,7 +32,7 @@ Interactions with the Server:
 Sensors report data either by periodically POSTing readings or streaming
 sending power spectrums periodically as a vector through a persistant
 secure TCP connection.  Streaming Sensors may also be set up to capture
-I/Q data for forensic analysis. 
+I/Q data for forensic analysis.
 
 # 2.  Meta-data message format
 
@@ -48,6 +48,7 @@ The messages between sensor and MSOD will be in JavaScript Object Notation
     "sensorKey": 846859034,
     "time": 987654321,
     "mobility": "Stationary",
+    "environment": "Outdoor",
     "latitude": 40.0,
     "longitude": -105.26,
     "altitude": 1655,
@@ -149,6 +150,7 @@ of header information with the following fields:
 4.  sensorKey = Authentication key given out by MSOD `integer`
 5.  time = Time [seconds since Jan 1, 1970 UTC] `long integer`
 6.  mobility = Mobility of sensor (“Stationary”| “Mobile”) `string`
+7.  environment = Description of the environment where antenna is mounted ("Indoor"| "Outdoor") 'string'
 7.  latitude = angle [degrees N] from equatorial plane (0 – 360) `float`
 8.  longitude = angle [degrees E] from Greenwich median (-180 – 180) `(float`
 9.  altitide = height above sea level [m] (0 - 10<sup>6</sup>) `float`
