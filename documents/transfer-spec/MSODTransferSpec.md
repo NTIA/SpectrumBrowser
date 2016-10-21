@@ -151,10 +151,10 @@ of header information with the following fields:
 5.  time = Time [seconds since Jan 1, 1970 UTC] `long integer`
 6.  mobility = Mobility of sensor (“Stationary”| “Mobile”) `string`
 7.  environment = Description of the environment where antenna is mounted ("Indoor"| "Outdoor") 'string'
-7.  latitude = angle [degrees N] from equatorial plane (0 – 360) `float`
-8.  longitude = angle [degrees E] from Greenwich median (-180 – 180) `(float`
-9.  altitide = height above sea level [m] (0 - 10<sup>6</sup>) `float`
-10. timeZone = Local time zone identifier (“America/New_York”, “America/Chicago”, “America/Denver”, “America/Phoenix”, or “America/Los_Angeles”) `string`
+8.  latitude = angle [degrees N] from equatorial plane (0 – 360) `float`
+9.  longitude = angle [degrees E] from Greenwich median (-180 – 180) `(float`
+10.  altitide = height above sea level [m] (0 - 10<sup>6</sup>) `float`
+11. timeZone = Local time zone identifier (“America/New_York”, “America/Chicago”, “America/Denver”, “America/Phoenix”, or “America/Los_Angeles”) `string`
 
 ### 3.3.  Data Messages
 
@@ -272,7 +272,7 @@ Antenna = antennas parameters with elements
 8.  elevationBeamDir = direction of main beam in elevation plane [degrees from horizontal] `float`
 9.  polarization = Polarization (“VL”| “HL”| “LHC”| “RHC”, “Slant”) `string`
 10. x-polarDiscrimination = Cross-polarization discrimination [dB] `float`
-11. voltWaveRatio = Voltage standing wave ratio `float`
+11. voltageStandingWaveRatio = Voltage standing wave ratio `float`
 12. cableLoss = Cable loss (dB) for cable connecting antenna and preselector `float`
 
 Preselector = preselector parameters with elements
