@@ -177,7 +177,7 @@ The JSON header information contains the following:
 9.  timeOfAcquisition = Time of 1<sup>st</sup> acquisition in a sequence [seconds since Jan 1, 1970 UTC] `long integer` in the UTC time     zone.
 10. acquisitionIndex = Index of current acquisition in a sequence `integer`
 11. numOfMeasurements = Number of measurements per acquisition `integer`. Not relevant for streaming transfers (set to -1).
-12. timeBetweenAcquisitinos = Imposed time between acquisition starts `float`. This is the time between successive Data messages (not             relevant for streaming transfers).
+12. timeBetweenAcquisitions = Imposed time between acquisition starts `float`. This is the time between successive Data messages (not             relevant for streaming transfers).
 13. timeBetweenStreams = Time between spectrums when data is sent as a stream via a tcp socket ( relevant for streaming transfers ).
 14. overloadFlag = Overload flag(s) (0 | 1) `integer`
 15. detectedSysNosiePowers = Detected system noise power [dBm ref to output of isotropic antenna] `float`
