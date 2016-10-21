@@ -48,8 +48,8 @@ The messages between sensor and MSOD will be in JavaScript Object Notation
     "sensorKey": 846859034,
     "time": 987654321,
     "mobility": "Stationary",
-    "lat": 40.0,
-    "long": -105.26,
+    "latitude": 40.0,
+    "longitude": -105.26,
     "altitude": 1655,
     "timeZone": "America_Denver"
 }
@@ -149,9 +149,9 @@ of header information with the following fields:
 4.  sensorKey = Authentication key given out by MSOD `integer`
 5.  time = Time [seconds since Jan 1, 1970 UTC] `long integer`
 6.  mobility = Mobility of sensor (“Stationary”| “Mobile”) `string`
-7.  lat = angle [degrees N] from equatorial plane (0 – 360) `float`
-8.  long = angle [degrees E] from Greenwich median (-180 – 180) `(float`
-9.  alt = height above sea level [m] (0 - 10<sup>6</sup>) `float`
+7.  latitude = angle [degrees N] from equatorial plane (0 – 360) `float`
+8.  longitude = angle [degrees E] from Greenwich median (-180 – 180) `(float`
+9.  altitide = height above sea level [m] (0 - 10<sup>6</sup>) `float`
 10. timeZone = Local time zone identifier (“America/New_York”, “America/Chicago”, “America/Denver”, “America/Phoenix”, or “America/Los_Angeles”) `string`
 
 ### 3.3.  Data Messages
@@ -175,7 +175,7 @@ The JSON header information contains the following:
 9.  timeOfAcquisition = Time of 1<sup>st</sup> acquisition in a sequence [seconds since Jan 1, 1970 UTC] `long integer` in the UTC time     zone.
 10. acquisitionIndex = Index of current acquisition in a sequence `integer`
 11. numOfMeasurements = Number of measurements per acquisition `integer`. Not relevant for streaming transfers (set to -1).
-12. timeBetweenMessage = Imposed time between acquisition starts `float`. This is the time between successive Data messages (not             relevant for streaming transfers).
+12. timeBetweenAcquisitinos = Imposed time between acquisition starts `float`. This is the time between successive Data messages (not             relevant for streaming transfers).
 13. timeBetweenStreams = Time between spectrums when data is sent as a stream via a tcp socket ( relevant for streaming transfers ).
 14. overloadFlag = Overload flag(s) (0 | 1) `integer`
 15. detectedSysNosiePowers = Detected system noise power [dBm ref to output of isotropic antenna] `float`
@@ -264,8 +264,8 @@ Antenna = antennas parameters with elements
 2.  lowFrequency = Low frequency [Hz] of operational range `float`
 3.  highFrequency = High frequency [Hz] of operational range `float`
 4.  gain = Antenna gain [dBi] `float`
-5.  howizontalBw = Horizontal 3-dB beamwidth [degrees] `float`
-6.  verticalBw = Vertical 3-dB beamwidth [degrees] `float`
+5.  horizontalBeamwidth = Horizontal 3-dB beamwidth [degrees] `float`
+6.  verticalBeamwidth = Vertical 3-dB beamwidth [degrees] `float`
 7.  azmithBeamDir = direction of main beam in azimuthal plane [degrees from N] `float`
 8.  elevationBeamDir = direction of main beam in elevation plane [degrees from horizontal] `float`
 9.  polarization = Polarization (“VL”| “HL”| “LHC”| “RHC”, “Slant”) `string`
