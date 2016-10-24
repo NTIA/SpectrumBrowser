@@ -108,10 +108,10 @@ the following fields:
 3.  sensorId = Unique identifier of sensor `string of URL unreserved characters`
 4.  sensorKey = Authentication key given out by MSOD `integer`
 5.  time = Time [seconds since Jan 1, 1970 UTC] `long integer`
-6.  Antenna = data that describes the antenna (see Antenna object below)
-7.  Preselector = data that describes RF hardware components in preselector (see Preselector object below)
-8.  CotsSensor = data that describes the COTS sensor (see COTSsensor object below)
-9.  Calibration = data structure that describes the calibration measurement (optional, see Cal object below)
+6.  antenna = data that describes the antenna (see Antenna object below)
+7.  preselector = data that describes RF hardware components in preselector (see Preselector object below)
+8.  cotsSensor = data that describes the COTS sensor (see COTSsensor object below)
+9.  calibration = data structure that describes the calibration measurement (optional, see Cal object below)
 
 The Sys data block is comprised of two vectors of numbers of the specified data type and byte order. If DataType = “ASCII”, then the data block is enclosed by square brackets.
 
@@ -153,7 +153,7 @@ of header information with the following fields:
 7.  environment = Description of the environment where antenna is mounted ("Indoor"| "Outdoor") 'string'
 8.  latitude = angle [degrees N] from equatorial plane (0 – 360) `float`
 9.  longitude = angle [degrees E] from Greenwich median (-180 – 180) `(float`
-10.  altitide = height above sea level [m] (0 - 10<sup>6</sup>) `float`
+10. altitide = height above sea level [m] (0 - 10<sup>6</sup>) `float`
 11. timeZone = Local time zone identifier (“America/New_York”, “America/Chicago”, “America/Denver”, “America/Phoenix”, or “America/Los_Angeles”) `string`
 
 ### 3.3.  Data Messages
@@ -186,7 +186,7 @@ The JSON header information contains the following:
 18. dataType = Data type ("Binary–float32", "Binary–int16", "Binary–int8", "ASCII") `string`
 19. byteOrder = Order of bytes for binary data ("Network" | "Big Endian" | "Little Endian" |  "N/A") `string`
 20. compression = Indicator on compression of data ("Zip" | "None") `string`
-21. MeasurementParameters = Measurement parameters (elements listed in Objects section below)
+21. measurementParameters = Measurement parameters (elements listed in Objects section below)
 
 The data block is comprised of an array of numbers of the specified data type and byte order. If DataType = “ASCII”, then the data block is enclosed by square brackets. 
 
@@ -260,7 +260,7 @@ posted Capture-Event.
 
 The following are JSON object definitions that exist in the JSON data messages above.
 
-Antenna = antennas parameters with elements
+antenna = antennas parameters with elements
 
 1.  model = Make/model (“AAC SPBODA-1080\_NFi”| “Alpha AW3232”) `string`
 2.  lowFrequency = Low frequency [Hz] of operational range `float`
@@ -271,11 +271,11 @@ Antenna = antennas parameters with elements
 7.  azmithBeamDir = direction of main beam in azimuthal plane [degrees from N] `float`
 8.  elevationBeamDir = direction of main beam in elevation plane [degrees from horizontal] `float`
 9.  polarization = Polarization (“VL”| “HL”| “LHC”| “RHC”, “Slant”) `string`
-10. x-polarDiscrimination = Cross-polarization discrimination [dB] `float`
+10. crossPolarDiscrimination = Cross-polarization discrimination [dB] `float`
 11. voltageStandingWaveRatio = Voltage standing wave ratio `float`
 12. cableLoss = Cable loss (dB) for cable connecting antenna and preselector `float`
 
-Preselector = preselector parameters with elements
+preselector = preselector parameters with elements
 
 1.  lowFreqPassband = Low frequency [Hz] of filter 1-dB passband `float`
 2.  highFreqPassband= High frequency [Hz] of filter 1-dB passband `float`
@@ -286,7 +286,7 @@ Preselector = preselector parameters with elements
 7.  lnaMaxPowerOut = Max power [dBm] at output of LNA, e.g., 1-dB compression point `float`
 8.  excessNoiseRatio = Excess noise ratio of noise [dB] diode for y-factor calibrations
 
-CotsSensor = COTS sensor parameters with elements
+cotsSensor = COTS sensor parameters with elements
 
 1.  model = Make and model ("Agilent N6841A"| "Agilent E4440A"| "CRFS RFeye"| "NI USRP N210"| "ThinkRF WSA5000-108"| "Spectrum Hound BB60C") `string`
 2.  lowFrequency = LowMinimum frequency [Hz] of operational range `float`
@@ -294,7 +294,7 @@ CotsSensor = COTS sensor parameters with elements
 4.  noiseFigure = Noise figure [dB] of COTS sensor in contrast to overall system `float`
 5.  maxPower = Maximum power [dBm at input] of COTS sensor `float`
 
-Calibration = Calibration parameters with elements
+calibration = Calibration parameters with elements
 
 1.  calsPerHour = Number of cals per hour `float`
 2.  temp = Measured temperature inside preselctor [F] `float`
@@ -306,7 +306,7 @@ Calibration = Calibration parameters with elements
 8.  compression = Compression of data ("Zip"| "None") `string`
 9.  MeasurementParameters = Measurement parameters (elements listed in Objects section below)
 
-MeasurementParameters = Measurement parameters
+measurementParameters = Measurement parameters
 
 1.  startFrequency = Start frequency [Hz] of sweep \<Required for swept-freq\> `float`
 2.  stopFrequency = Stop frequency [Hz] of sweep \<Required for swept-freq\> `float`
