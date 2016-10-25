@@ -317,7 +317,8 @@ measurementParameters = Measurement parameters
 7.  videoBw = Video bandwidth [Hz] \<Required for swept-freq\> `float`
 8.  attenuation = COTS sensor attenuation [dB] \<Required for swept-freq\> `float`
 9.  sampleRate = Sampling rate [Samples/second] \<Required for I/Q capture\>
-10.  centerFrequency = Center frequency [Hz] \Required for I/Q capture\>
+10. equivalentNoiseBw = Equivalent Noise Bandwidth [Hz]
+11.  centerFrequencies = Center frequency [Hz] \<Required for I/Q capture\>
 
 Note: \<systemToDetect,startFrequency,stopFrequency\> determine the MSOD band for which we are capturing I/Q data.
 centerFrequency and CaptureEvent.sampFreq determine the bandwidth of the I/Q samples. In the case of a 
