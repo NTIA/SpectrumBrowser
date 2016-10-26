@@ -153,7 +153,7 @@ of header information with the following fields:
 7.  environment = Description of the environment where antenna is mounted ("Indoor"| "Outdoor") 'string'
 8.  latitude = angle [degrees N] from equatorial plane (0 – 360) `float`
 9.  longitude = angle [degrees E] from Greenwich median (-180 – 180) `(float`
-10. altitide = height above sea level [m] (0 - 10<sup>6</sup>) `float`
+10. altitude = height above sea level [m] (0 - 10<sup>6</sup>) `float`
 11. timeZone = Local time zone identifier (“America/New_York”, “America/Chicago”, “America/Denver”, “America/Phoenix”, or “America/Los_Angeles”) `string`
 
 ### 3.3.  Data Messages
