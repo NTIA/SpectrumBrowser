@@ -324,7 +324,7 @@ Note: \<systemToDetect,startFrequency,stopFrequency\> determine the MSOD band fo
 centerFrequency and CaptureEvent.sampFreq determine the bandwidth of the I/Q samples. In the case of a 
 swept frequency sensor, there could be several capture events corresponding to a single scan.
 
-Decode = Decdoed LTE information
+Decode = Decoded LTE information
 
 Our first target is coherent detection, where we assume complete knowledge
 of the signal we are trying to detect. For LTE, the following are 
