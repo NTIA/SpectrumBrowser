@@ -50,7 +50,7 @@ if (( $did_set_gwt_home )); then
 fi
 echo
 echo "============== Installing apache-ant =============="
-wget  https://www.apache.org/dist/ant/binaries/apache-ant-1.9.6-bin.tar.gz -P /opt
+wget  https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.6-bin.tar.gz -P /opt
 tar -xvzf /opt/apache-ant-1.9.6-bin.tar.gz -C /opt/
 mv /opt/apache-ant-1.9.6 /opt/apache-ant
 rm -r /opt/apache-ant-1.9.6-bin.tar.gz
