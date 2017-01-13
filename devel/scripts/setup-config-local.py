@@ -43,6 +43,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     configFile = args.f
     host = args.host
-    sys.path.append(getProjectHome() + "/flask")
+    sys.path.append(getProjectHome() + "/services/common")
     import Config
     setupConfig(host, configFile)
