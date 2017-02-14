@@ -180,7 +180,7 @@ The JSON header information contains the following:
 12. timeBetweenAcquisitions = Imposed time between acquisition starts `float`. This is the time between successive Data messages (not             relevant for streaming transfers).
 13. timeBetweenStreams = Time between spectrums when data is sent as a stream via a tcp socket ( relevant for streaming transfers ).
 14. overloadFlag = Overload flag(s) (0 | 1) `integer`
-15. detectedSysNosiePowers = Detected system noise power [dBm ref to output of isotropic antenna] `float`
+15. detectedSysNoisePowers = Detected system noise power [dBm ref to output of isotropic antenna] `float`
 16. comment `string`
 17. processed = Indicator on processing of data ("True"|"False") `string`
 18. dataType = Data type ("Binary–float32", "Binary–int16", "Binary–int8", "ASCII") `string`
