@@ -244,7 +244,7 @@ The Capture-Event message contains the following:
 7.   sensitivity = Sensitivity of the data (“Low” | “Medium” | “High”) `string`
 8.   measurementType = Type of measurement (“I_Q”) `string`
 9.   dataType = Data type ("Binary–float32", "Binary–int16", "Binary–int8") `string`
-10.  MeasurementParameters = Measurement parameters (elements listed in Objects section below)
+10.  measurementParameters = Measurement parameters (elements listed in Objects section below)
 11.  decode = Detection results (elements listed in Objects section below)
 12.  sampleCount: Number of captured samples.
 
