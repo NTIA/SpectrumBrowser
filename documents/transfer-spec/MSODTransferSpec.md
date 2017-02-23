@@ -104,7 +104,7 @@ header information and an optional data block. The Sys header contains
 the following fields:
 
 1.  version = Schema/data transfer version with the major.minor.revision syntax `string`
-2.  type = Type of JSON message (”Sys”) `string`
+2.  messageType = Type of JSON message (”Sys”) `string`
 3.  sensorId = Unique identifier of sensor `string of URL unreserved characters`
 4.  sensorKey = Authentication key given out by MSOD `integer`
 5.  time = Time [seconds since Jan 1, 1970 UTC] `long integer`
@@ -145,7 +145,7 @@ sequence of continuous acquisitions is initiated. It is comprised only
 of header information with the following fields:
 
 1.  version = Schema/data transfer version with the major.minor.revision syntax `string`
-2.  type = Type of JSON message (“Loc”) `string`
+2.  messageType = Type of JSON message (“Loc”) `string`
 3.  sensorId = Unique identifier of sensor `string of URL unreserved characters`
 4.  sensorKey = Authentication key given out by MSOD `integer`
 5.  time = Time [seconds since Jan 1, 1970 UTC] `long integer`
