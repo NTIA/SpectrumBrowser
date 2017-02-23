@@ -397,4 +397,3 @@ scope of this document.
 
 The data streamed or POSTed to the server is maintained in a database for subsequent analysis.
 The process of ingesting the data and accessing it described in a separate API document.
-
