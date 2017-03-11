@@ -171,7 +171,6 @@ The JSON header information contains the following:
 3.  sensorId = Unique identifier of sensor `string of URL unreserved characters`
 4.  sensorKey = Authentication key for the sensor `string`
 5.  time = Time [seconds since Jan 1, 1970 UTC] `long integer` in the UTC time zone. 
-<<<<<<< HEAD
 6.  sysToDetect = System that measurement is designed to detect (“Radar–SPN43”| “LTE”| “None”) `string of URL unreserved characters`
 7.  sensitivity = Sensitivity of the data (“Low” | “Medium” | “High”) `string`
 8.  measurementType = Type of measurement (“Swept-frequency”| “FFT-power”) `string`
@@ -188,34 +187,12 @@ The JSON header information contains the following:
 19. byteOrder = Order of bytes for binary data ("Network" | "Big Endian" | "Little Endian" |  "N/A") `string`
 20. compression = Indicator on compression of data ("Zip" | "None") `string`
 21. measurementParameters = Measurement parameters (elements listed in Objects section below)
-=======
-6.  location = location parameters (elements listed in Objects section below)
-7.  azimuthBeamDir = Antenna setting - direction of main beam in azimuthal plane [degrees from N] `float`
-8.  elevationBeamDir = Antenn setting - direction of main beam in elevation plane [degrees from horizontal] `float`
-9.  polarization = Antenna setting - Polarization (“VL”| “HL”| “LHC”| “RHC”, “Slant”) `string`
-10.  sysToDetect = System that measurement is designed to detect (“Radar–SPN43”| “LTE”| “None”) `string of URL unreserved characters`
-11.  sensitivity = Sensitivity of the data (“Low” | “Medium” | “High”) `string`
-12.  measurementType = Type of measurement (“Swept-frequency”| “FFT-power”) `string`
-13.  timeOfAcquisition = Time of 1<sup>st</sup> acquisition in a sequence [seconds since Jan 1, 1970 UTC] `long integer` in the UTC time     zone.
-14. acquisitionIndex = Index of current acquisition in a sequence `integer`
-15. numOfMeasurements = Number of measurements per acquisition `integer`. Not relevant for streaming transfers (set to -1).
-16. timeBetweenAcquisitions = Imposed time between acquisition starts `float`. This is the time between successive Data messages (not             relevant for streaming transfers).
-17. timeBetweenStreams = Time between spectrums when data is sent as a stream via a tcp socket ( relevant for streaming transfers ).
-18. overloadFlag = Overload flag(s) (0 | 1) `integer`
-19. detectedSysNoisePowers = Detected system noise power [dBm ref to output of isotropic antenna] `float`
-20. comment `string`
-21. processed = Indicator on processing of data ("True"|"False") `string`
-22. dataType = Data type ("Binary–float32", "Binary–int16", "Binary–int8", "ASCII") `string`
-23. byteOrder = Order of bytes for binary data ("Network" | "Big Endian" | "Little Endian" |  "N/A") `string`
-24. compression = Indicator on compression of data ("Zip" | "None") `string`
-25. measurementParameters = Measurement parameters (elements listed in Objects section below)
->>>>>>> 10d7571... Fix typo in transfer spec, azmith -> azimuth
 
 The data block is comprised of an array of numbers of the specified data type and byte order. If DataType = “ASCII”, then the data block is enclosed by square brackets. 
 
 If processed = “False”, then the data stream is
 
-25a. rawMeasuredPowers(n, nM) = Raw measured data vector [dBm ref to input of COTS sensor]
+21a. rawMeasuredPowers(n, nM) = Raw measured data vector [dBm ref to input of COTS sensor]
 
 where n = measurementParameters.n is specified in the Data message header. Raw data is
 straight from the COTS sensor and is provided for the first acquisition
@@ -227,7 +204,7 @@ index and the second argument denotes measurement index.
 
 If processed = “True”, then the data stream is
 
-25b. measuredPowers(n, nM) = Measured power vector [dBm ref to output of isotropic antenna]
+21b. measuredPowers(n, nM) = Measured power vector [dBm ref to output of isotropic antenna]
 
 Processed data is adjusted to remove system gains and losses and provide
 signal amplitude that is sensor-independent. Processed data is intended
@@ -298,16 +275,18 @@ antenna = antennas parameters with elements
 11. voltageStandingWaveRatio = Voltage standing wave ratio `float`
 12. cableLoss = Cable loss (dB) for cable connecting antenna and preselector `float`
 
+
 preselector = preselector parameters with elements
 
-1.  lowFreqPassband = Low frequency [Hz] of filter 1-dB passband `float`
-2.  highFreqPassband= High frequency [Hz] of filter 1-dB passband `float`
-3.  lowFreqStopband = Low frequency [Hz] of filter 60-dB stopband `float`
-4.  lowFreqStopBand = High frequency [Hz] of filter 60-dB stopband `float`
-5.  lnaNoiseFigure = Noise figure [dB] of LNA `float`
-6.  lnaGain = Gain [dB] of LNA `float`
-7.  lnaMaxPowerOut = Max power [dBm] at output of LNA, e.g., 1-dB compression point `float`
+1.  lowFreqPassband = Low frequency [Hz] of filter 1-dB passband float
+2.  highFreqPassband= High frequency [Hz] of filter 1-dB passband float
+3.  lowFreqStopband = Low frequency [Hz] of filter 60-dB stopband float
+4.  lowFreqStopBand = High frequency [Hz] of filter 60-dB stopband float
+5.  lnaNoiseFigure = Noise figure [dB] of LNA float
+6.  lnaGain = Gain [dB] of LNA float
+7.  lnaMaxPowerOut = Max power [dBm] at output of LNA, e.g., 1-dB compression point float
 8.  excessNoiseRatio = Excess noise ratio of noise [dB] diode for y-factor calibrations
+
 
 cotsSensor = COTS sensor parameters with elements
 
