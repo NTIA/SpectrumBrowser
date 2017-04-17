@@ -311,7 +311,7 @@ measurementParameters = Measurement parameters
 
 1.  startFrequency = Start frequency [Hz] of sweep \<Required for swept-freq\> `float`
 2.  stopFrequency = Stop frequency [Hz] of sweep \<Required for swept-freq\> `float`
-3.  nFreqsInSweep = Number of frequencies in sweep \<Required for swept-freq\> `float`
+3.  numOfFrequenciesInSweep = Number of frequencies in sweep \<Required for swept-freq\> `float`
 4.  dwellTime = Dwell time [s] at each frequency in a sweep \<Required for swept-freq\> `float`
 5.  detector = Detector: ("RMS"| "Positive” | "Peak" | "Average")  \<Required for swept-freq\> `string`
 6.  resolutionBw = Resolution bandwidth [Hz] \<Required for swept-freq\> `float`
