@@ -115,7 +115,7 @@ the following fields:
 
 The Sys data block is comprised of two vectors of numbers of the specified data type and byte order. If DataType = “ASCII”, then the data block is enclosed by square brackets.
 
-If processed = “False”, then the data streams are
+If processed = false, then the data streams are
 
 10a. noiseSourceOnPowers(n) = Raw measured data vector [dBm ref to input of COTS sensor] when known source is on.
 
@@ -127,7 +127,7 @@ in a sequence. The Sys raw stream is ordered as follows: [wOn(1), wOn(2),
 … wOn(n), wOff(1), wOff(2), …, wOff(n)], where the argument denotes
 a frequency index and wOn = noiseSourceOnPowers and wOff = noiseSourceOffPowers
 
-If processed = “True”, then the data streams are,
+If processed = true, then the data streams are,
 
 10b. noiseFigure(n) = Noise figure [dB] referenced to input of preselector.
 
@@ -182,7 +182,7 @@ The JSON header information contains the following:
 14. overloadFlag = Overload flag(s) (0 | 1) `integer`
 15. detectedSysNoisePowers = Detected system noise power [dBm ref to output of isotropic antenna] `float`
 16. comment `string`
-17. processed = Indicator on processing of data ("True"|"False") `string`
+17. processed = Indicator on processing of data (true"|false) boolean
 18. dataType = Data type ("Binary–float32", "Binary–int16", "Binary–int8", "ASCII") `string`
 19. byteOrder = Order of bytes for binary data ("Network" | "Big Endian" | "Little Endian" |  "N/A") `string`
 20. compression = Indicator on compression of data ("Zip" | "None") `string`
@@ -190,7 +190,7 @@ The JSON header information contains the following:
 
 The data block is comprised of an array of numbers of the specified data type and byte order. If DataType = “ASCII”, then the data block is enclosed by square brackets. 
 
-If processed = “False”, then the data stream is
+If processed = false, then the data stream is
 
 21a. rawMeasuredPowers(n, nM) = Raw measured data vector [dBm ref to input of COTS sensor]
 
@@ -202,7 +202,7 @@ system specifications. The Data raw stream is ordered as follows: [w(1,
 w(2, nM), …, w(n, nM)], where the first argument denotes a frequency
 index and the second argument denotes measurement index.
 
-If processed = “True”, then the data stream is
+If processed = true, then the data stream is
 
 21b. measuredPowers(n, nM) = Measured power vector [dBm ref to output of isotropic antenna]
 
@@ -301,7 +301,7 @@ calibration = Calibration parameters with elements
 2.  temp = Measured temperature inside preselctor [F] `float`
 3.  measurementType: Type of measurement (“Swept-frequency”, “FFT-power”) `string`
 4.  numOfMeasurmentsPerCal = Number of measurements per calibration `integer`
-5.  processed = Indicator on processing of data ("True"| "False") `string`
+5.  processed = Indicator on processing of data (true"| false) false
 6.  dataType = Data type ("Binary–float32"| "Binary–int16"| "Binary–int8"| "ASCII") `string`
 7.  byteOrder = Order of bytes for binary data ("Network", "Big Endian", "Little Endian", "N/A") `string`
 8.  compression = Compression of data ("Zip"| "None") `string`
