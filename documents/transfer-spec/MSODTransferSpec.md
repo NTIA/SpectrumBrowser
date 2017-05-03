@@ -108,10 +108,14 @@ the following fields:
 3.  sensorId = Unique identifier of sensor `string of URL unreserved characters`
 4.  sensorKey = Authentication key given out by MSOD `integer`
 5.  time = Time [seconds since Jan 1, 1970 UTC] `long integer`
-6.  antenna = data that describes the antenna (see Antenna object below)
-7.  preselector = data that describes RF hardware components in preselector (see Preselector object below)
-8.  cotsSensor = data that describes the COTS sensor (see COTSsensor object below)
-9.  calibration = data structure that describes the calibration measurement (optional, see Cal object below)
+6.  processed = Indicator on processing of data (true"| false) false
+7.  dataType = Data type ("Binary–float32"| "Binary–int16"| "Binary–int8"| "ASCII") `string`
+8.  byteOrder = Order of bytes for binary data ("Network", "Big Endian", "Little Endian", "N/A") `string`
+9.  compression = Compression of data ("Zip"| "None") `string`
+10.  antenna = data that describes the antenna (see Antenna object below)
+11.  preselector = data that describes RF hardware components in preselector (see Preselector object below)
+12.  cotsSensor = data that describes the COTS sensor (see COTSsensor object below)
+13.  calibration = data structure that describes the calibration measurement (optional, see Cal object below)
 
 The Sys data block is comprised of two vectors of numbers of the specified data type and byte order. If DataType = “ASCII”, then the data block is enclosed by square brackets.
 
@@ -301,11 +305,7 @@ calibration = Calibration parameters with elements
 2.  temp = Measured temperature inside preselctor [F] `float`
 3.  measurementType: Type of measurement (“Swept-frequency”, “FFT-power”) `string`
 4.  numOfMeasurmentsPerCal = Number of measurements per calibration `integer`
-5.  processed = Indicator on processing of data (true"| false) false
-6.  dataType = Data type ("Binary–float32"| "Binary–int16"| "Binary–int8"| "ASCII") `string`
-7.  byteOrder = Order of bytes for binary data ("Network", "Big Endian", "Little Endian", "N/A") `string`
-8.  compression = Compression of data ("Zip"| "None") `string`
-9.  MeasurementParameters = Measurement parameters (elements listed in Objects section below)
+5.  MeasurementParameters = Measurement parameters (elements listed in Objects section below)
 
 measurementParameters = Measurement parameters
 
